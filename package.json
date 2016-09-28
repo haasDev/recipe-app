@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "react app that will perform all the basic crud operations on recipes",
   "scripts": {
-    "start": "webpack-dev-server --content-base ./public --inline"
+    "start": "webpack-dev-server --content-base ./dist --inline"
   },
   "repository": {
     "type": "git",
