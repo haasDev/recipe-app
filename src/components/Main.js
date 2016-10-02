@@ -43,6 +43,9 @@ class RecipeBox extends React.Component {
     this.setState({showModal: !this.state.showModal});
   }
 
+  recipeNameChange(e) {
+    this.setState({recipeName: e.target.value});
+  }
 }
 
 ReactDOM.render(<Main />, document.getElementById('app'));
