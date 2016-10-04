@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Button, Glyphicon} from 'react-bootstrap';
 
 class RecipeBox extends React.Component {
   constructor(props) {
@@ -59,6 +60,17 @@ class RecipeBox extends React.Component {
         ingredients={recipe.ingredients}
         instructions={recipe.instructions}
       />
+    );
+
+    return (
+      <div>
+        <h1>
+          My Recipes
+          <Button bsStyle="success" onClick={this.showModal}>
+            <Glyphicon glyph="plus" /> Add
+          </Button>
+        </h1>
+      </div>
     );
   }
 }
