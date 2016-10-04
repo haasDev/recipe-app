@@ -70,6 +70,9 @@ class RecipeBox extends React.Component {
             <Glyphicon glyph="plus" /> Add
           </Button>
         </h1>
+        <div>
+          {recipes}
+        </div>
       </div>
     );
   }
