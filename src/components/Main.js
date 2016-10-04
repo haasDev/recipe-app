@@ -46,6 +46,10 @@ class RecipeBox extends React.Component {
   recipeNameChange(e) {
     this.setState({recipeName: e.target.value});
   }
+
+  recipeIngredientListChange(e) {
+    this.setState({recipeIngredientList: e.target.value});
+  }
 }
 
 ReactDOM.render(<Main />, document.getElementById('app'));
