@@ -50,6 +50,17 @@ class RecipeBox extends React.Component {
   recipeIngredientListChange(e) {
     this.setState({recipeIngredientList: e.target.value});
   }
+
+  reder() {
+    const recipes = this.state.recipes.map(recipe =>
+      <Recipe
+        title={recipe.title}
+        key={recipe.title}
+        ingredients={recipe.ingredients}
+        instructions={recipe.instructions}
+      />
+    );
+  }
 }
 
 ReactDOM.render(<Main />, document.getElementById('app'));
