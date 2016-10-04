@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, Glyphicon} from 'react-bootstrap';
+import {Button, Glyphicon, AddModal} from 'react-bootstrap';
 
 class RecipeBox extends React.Component {
   constructor(props) {
@@ -73,6 +73,17 @@ class RecipeBox extends React.Component {
         <div>
           {recipes}
         </div>
+        <AddModal
+          recipeName={this.state.recipeName}
+          recipeNameChange={this.recipeNameChange}
+          recipeIngredientList={this.recipeIngredientList}
+          recipeIngredientListChange={this.recipeIngredientListChange}
+          recipeInstructions={this.state.recipeInstructions}
+          recipeInstructionsChange={this.recipeInstructionsChange}
+          close={this.toggleModal}
+          showModal={this.state.showModal}
+          addRecipe={this.addRecipe}
+        />
       </div>
     );
   }
