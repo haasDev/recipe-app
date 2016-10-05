@@ -20,7 +20,7 @@
   "homepage": "https://github.com/haasDev/recipe-app#readme",
   "dependencies": {
     "react": "^15.3.2",
-    "react-bootstrap": "^0.30.3",
+    "react-bootstrap": "^0.30.5",
     "react-dom": "^15.3.2"
   },
   "devDependencies": {

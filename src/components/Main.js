@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button, Glyphicon, AddModal} from 'react-bootstrap';
+import Button from 'react-bootstrap/lib/Button';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 
 class RecipeBox extends React.Component {
   constructor(props) {
@@ -12,14 +13,14 @@ class RecipeBox extends React.Component {
       recipeInstructions: '',
       recipes: []
     }
-  }
 
-  // pre-bind fn's
-  this.toggleModal = this.toggleModal.bind(this);
-  this.addRecipe = this.addRecipe.bind(this);
-  this.recipeNameChange = this.recipeNameChange.bind(this);
-  this.recipeIngredientListChange = this.recipeIngredientListChange.bind(this);
-  this.recipeInstructionsChange = this.recipeInstructionsChange.bind(this);
+    // pre-bind fn's
+    this.toggleModal = this.toggleModal.bind(this);
+    this.addRecipe = this.addRecipe.bind(this);
+    this.recipeNameChange = this.recipeNameChange.bind(this);
+    this.recipeIngredientListChange = this.recipeIngredientListChange.bind(this);
+    this.recipeInstructionsChange = this.recipeInstructionsChange.bind(this);
+  }
 
   // class methods
   addRecipe() {
@@ -52,41 +53,41 @@ class RecipeBox extends React.Component {
     this.setState({recipeIngredientList: e.target.value});
   }
 
-  reder() {
-    const recipes = this.state.recipes.map(recipe =>
-      <Recipe
-        title={recipe.title}
-        key={recipe.title}
-        ingredients={recipe.ingredients}
-        instructions={recipe.instructions}
-      />
-    );
+  recipeInstructionsChange(e) {
+    this.setState({recipeInstructions: e.target.value});
+  }
+
+  render() {
+    // const recipes = this.state.recipes.map(recipe =>
+    //   <Recipe
+    //     title={recipe.title}
+    //     key={recipe.title}
+    //     ingredients={recipe.ingredients}
+    //     instructions={recipe.instructions}
+    //   />
+    // );
 
     return (
       <div>
-        <h1>
+        <h1 style={styles.h1}>
           My Recipes
-          <Button bsStyle="success" onClick={this.showModal}>
-            <Glyphicon glyph="plus" /> Add
+          <Button bsStyle="success" onClick={this.showModal} style={styles.Button}>
+             <Glyphicon glyph="plus" /> Add
           </Button>
         </h1>
-        <div>
-          {recipes}
-        </div>
-        <AddModal
-          recipeName={this.state.recipeName}
-          recipeNameChange={this.recipeNameChange}
-          recipeIngredientList={this.recipeIngredientList}
-          recipeIngredientListChange={this.recipeIngredientListChange}
-          recipeInstructions={this.state.recipeInstructions}
-          recipeInstructionsChange={this.recipeInstructionsChange}
-          close={this.toggleModal}
-          showModal={this.state.showModal}
-          addRecipe={this.addRecipe}
-        />
       </div>
     );
   }
 }
 
-ReactDOM.render(<Main />, document.getElementById('app'));
+const styles = {
+  Button: {
+    float: 'right',
+    marginRight: '20px'
+  },
+  h1: {
+    textAlign: 'center'
+  }
+};
+
+ReactDOM.render(<RecipeBox />, document.getElementById('app'));
