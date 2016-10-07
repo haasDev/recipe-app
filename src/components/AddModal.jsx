@@ -38,6 +38,11 @@ export default ({showModal,
             type="text"
             placeholder="Comma separated list of Ingredients"
             onChange={recipeIngredientListChange} />
+          <FormControl
+            value={recipeInstructions}
+            type="textarea"
+            placeholder="Cooking Instructions"
+            onChange={recipeInstructionsChange} />
         </FormGroup>
       </form>
     </ModalBody>

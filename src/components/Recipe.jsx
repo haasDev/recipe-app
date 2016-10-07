@@ -1,15 +1,15 @@
 import React from 'react';
 
 import Button from 'react-bootstrap/lib/Button';
-import Glyphicon from 'react-bootstrap/lib/Button';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
-import Panel from 'react-bootstrap/lib/PanelGroup';
+import Panel from 'react-bootstrap/lib/Panel';
 
 import Ingredient from './Ingredient.jsx';
 
 export default ({title, ingredients, instructions}) => {
-  const ingredientList = ingredients.map(ingredient => <ListGroupItem><Ingredient name={ingredient} /></ListGroupItem>);
+  const ingredientList = ingredients.map(ingredient => <ListGroupItem key={ingredient}><Ingredient name={ingredient} /></ListGroupItem>);
   return (
     <Panel collapsible header={title}>
       <ListGroup fill>
