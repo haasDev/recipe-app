@@ -1,8 +1,12 @@
+import React from 'react';
+
 import Button from 'react-bootstrap/lib/Button';
 import Glyphicon from 'react-bootstrap/lib/Button';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem';
 import Panel from 'react-bootstrap/lib/PanelGroup';
+
+import Ingredient from './Ingredient.jsx';
 
 const Recipe = ({title, ingredients, instructions}) => {
   const ingredientList = ingredients.map(ingredient => <ListGroupItem><Ingredient name={ingredient} /></ListGroupItem>);
