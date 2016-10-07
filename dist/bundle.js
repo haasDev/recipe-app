@@ -46,11 +46,6 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.AddModal = undefined;
-	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
@@ -73,33 +68,9 @@
 	
 	var _Recipe2 = _interopRequireDefault(_Recipe);
 	
-	var _FormControl = __webpack_require__(280);
+	var _AddModal = __webpack_require__(279);
 	
-	var _FormControl2 = _interopRequireDefault(_FormControl);
-	
-	var _FormGroup = __webpack_require__(284);
-	
-	var _FormGroup2 = _interopRequireDefault(_FormGroup);
-	
-	var _Modal = __webpack_require__(285);
-	
-	var _Modal2 = _interopRequireDefault(_Modal);
-	
-	var _ModalHeader = __webpack_require__(325);
-	
-	var _ModalHeader2 = _interopRequireDefault(_ModalHeader);
-	
-	var _ModalBody = __webpack_require__(322);
-	
-	var _ModalBody2 = _interopRequireDefault(_ModalBody);
-	
-	var _ModalFooter = __webpack_require__(324);
-	
-	var _ModalFooter2 = _interopRequireDefault(_ModalFooter);
-	
-	var _ModalTitle = __webpack_require__(326);
-	
-	var _ModalTitle2 = _interopRequireDefault(_ModalTitle);
+	var _AddModal2 = _interopRequireDefault(_AddModal);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -108,74 +79,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	// import AddModal from './AddModal.jsx';
-	
-	// import Button from 'react-bootstrap/lib/Button';
-	
-	
-	var AddModal = exports.AddModal = function AddModal(_ref) {
-	  var showModal = _ref.showModal;
-	  var close = _ref.close;
-	  var recipeName = _ref.recipeName;
-	  var recipeNameChange = _ref.recipeNameChange;
-	  var recipeIngredientList = _ref.recipeIngredientList;
-	  var recipeIngredientListChange = _ref.recipeIngredientListChange;
-	  var recipeInstructions = _ref.recipeInstructions;
-	  var recipeInstructionsChange = _ref.recipeInstructionsChange;
-	  var addRecipe = _ref.addRecipe;
-	  return _react2.default.createElement(
-	    _Modal2.default,
-	    { show: showModal, onHide: close },
-	    _react2.default.createElement(
-	      _ModalHeader2.default,
-	      { closeButton: true },
-	      _react2.default.createElement(
-	        _ModalTitle2.default,
-	        null,
-	        'Add Recipe'
-	      )
-	    ),
-	    _react2.default.createElement(
-	      _ModalBody2.default,
-	      null,
-	      _react2.default.createElement(
-	        'form',
-	        null,
-	        _react2.default.createElement(
-	          _FormGroup2.default,
-	          {
-	            controlId: 'addRecipeForm',
-	            validationState: 'success' },
-	          _react2.default.createElement(_FormControl2.default, {
-	            value: recipeName,
-	            type: 'text',
-	            placeholder: 'Name',
-	            onChange: recipeNameChange }),
-	          _react2.default.createElement(_FormControl2.default, {
-	            value: recipeIngredientList,
-	            type: 'text',
-	            placeholder: 'Comma separated list of Ingredients',
-	            onChange: recipeIngredientListChange }),
-	          _react2.default.createElement(_FormControl2.default, {
-	            value: recipeInstructions,
-	            componentClass: 'textarea',
-	            placeholder: 'Recipe Instructions',
-	            onChange: recipeInstructionsChange })
-	        )
-	      )
-	    ),
-	    _react2.default.createElement(
-	      _ModalFooter2.default,
-	      null,
-	      _react2.default.createElement(
-	        _Button2.default,
-	        { bsStyle: 'primary', onClick: addRecipe },
-	        _react2.default.createElement(_Glyphicon2.default, { glyph: 'floppy-disk' }),
-	        ' Save'
-	      )
-	    )
-	  );
-	};
 	
 	var RecipeBox = function (_React$Component) {
 	  _inherits(RecipeBox, _React$Component);
@@ -273,7 +176,7 @@
 	          null,
 	          recipes
 	        ),
-	        _react2.default.createElement(AddModal, {
+	        _react2.default.createElement(_AddModal2.default, {
 	          recipeName: this.state.recipeName,
 	          recipeNameChange: this.recipeNameChange,
 	          recipeIngredientList: this.state.ingredientList,
@@ -24095,6 +23998,10 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -24121,7 +24028,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Recipe = function Recipe(_ref) {
+	exports.default = function (_ref) {
 	  var title = _ref.title;
 	  var ingredients = _ref.ingredients;
 	  var instructions = _ref.instructions;
@@ -24852,7 +24759,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Ingredient = undefined;
 	
 	var _react = __webpack_require__(1);
 	
@@ -24860,7 +24766,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Ingredient = exports.Ingredient = function Ingredient(_ref) {
+	exports.default = function (_ref) {
 	  var name = _ref.name;
 	  return _react2.default.createElement(
 	    'div',
@@ -24870,7 +24776,117 @@
 	};
 
 /***/ },
-/* 279 */,
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _Button = __webpack_require__(172);
+	
+	var _Button2 = _interopRequireDefault(_Button);
+	
+	var _FormControl = __webpack_require__(280);
+	
+	var _FormControl2 = _interopRequireDefault(_FormControl);
+	
+	var _FormGroup = __webpack_require__(284);
+	
+	var _FormGroup2 = _interopRequireDefault(_FormGroup);
+	
+	var _Glyphicon = __webpack_require__(271);
+	
+	var _Glyphicon2 = _interopRequireDefault(_Glyphicon);
+	
+	var _Modal = __webpack_require__(285);
+	
+	var _Modal2 = _interopRequireDefault(_Modal);
+	
+	var _ModalHeader = __webpack_require__(325);
+	
+	var _ModalHeader2 = _interopRequireDefault(_ModalHeader);
+	
+	var _ModalBody = __webpack_require__(322);
+	
+	var _ModalBody2 = _interopRequireDefault(_ModalBody);
+	
+	var _ModalFooter = __webpack_require__(324);
+	
+	var _ModalFooter2 = _interopRequireDefault(_ModalFooter);
+	
+	var _ModalTitle = __webpack_require__(326);
+	
+	var _ModalTitle2 = _interopRequireDefault(_ModalTitle);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (_ref) {
+	  var showModal = _ref.showModal;
+	  var close = _ref.close;
+	  var recipeName = _ref.recipeName;
+	  var recipeNameChange = _ref.recipeNameChange;
+	  var recipeIngredientList = _ref.recipeIngredientList;
+	  var recipeIngredientListChange = _ref.recipeIngredientListChange;
+	  var recipeInstructions = _ref.recipeInstructions;
+	  var recipeInstructionsChange = _ref.recipeInstructionsChange;
+	  var addRecipe = _ref.addRecipe;
+	  return _react2.default.createElement(
+	    _Modal2.default,
+	    { show: showModal, onHide: close },
+	    _react2.default.createElement(
+	      _ModalHeader2.default,
+	      { closeButton: true },
+	      _react2.default.createElement(
+	        _ModalTitle2.default,
+	        null,
+	        'Add Recipe'
+	      )
+	    ),
+	    _react2.default.createElement(
+	      _ModalBody2.default,
+	      null,
+	      _react2.default.createElement(
+	        'form',
+	        null,
+	        _react2.default.createElement(
+	          _FormGroup2.default,
+	          {
+	            controlId: 'addRecipeForm',
+	            validationState: 'success' },
+	          _react2.default.createElement(_FormControl2.default, {
+	            value: recipeName,
+	            type: 'text',
+	            placeholder: 'Name',
+	            onChange: recipeNameChange }),
+	          _react2.default.createElement(_FormControl2.default, {
+	            value: recipeIngredientList,
+	            type: 'text',
+	            placeholder: 'Comma separated list of Ingredients',
+	            onChange: recipeIngredientListChange })
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      _ModalFooter2.default,
+	      null,
+	      _react2.default.createElement(
+	        _Button2.default,
+	        { bsStyle: 'primary', onClick: addRecipe },
+	        _react2.default.createElement(_Glyphicon2.default, { glyph: 'floppy-disk' }),
+	        ' Save'
+	      )
+	    )
+	  );
+	};
+
+/***/ },
 /* 280 */
 /***/ function(module, exports, __webpack_require__) {
 

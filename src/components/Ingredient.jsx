@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Ingredient = ({name}) => (
+export default ({name}) => (
   <div>
     {name}
   </div>

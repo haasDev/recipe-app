@@ -1,13 +1,16 @@
+import React from 'react';
+
 import Button from 'react-bootstrap/lib/Button';
 import FormControl from 'react-bootstrap/lib/FormControl';
 import FormGroup from 'react-bootstrap/lib/FormGroup';
+import Glyphicon from 'react-bootstrap/lib/Glyphicon';
 import Modal from 'react-bootstrap/lib/Modal';
 import ModalHeader from 'react-bootstrap/lib/ModalHeader';
 import ModalBody from 'react-bootstrap/lib/ModalBody';
 import ModalFooter from 'react-bootstrap/lib/ModalFooter';
 import ModalTitle from 'react-bootstrap/lib/ModalTitle';
 
-export const AddModal = ({showModal,
+export default ({showModal,
                   close,
                   recipeName,
                   recipeNameChange,

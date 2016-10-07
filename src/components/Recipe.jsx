@@ -8,7 +8,7 @@ import Panel from 'react-bootstrap/lib/PanelGroup';
 
 import Ingredient from './Ingredient.jsx';
 
-const Recipe = ({title, ingredients, instructions}) => {
+export default ({title, ingredients, instructions}) => {
   const ingredientList = ingredients.map(ingredient => <ListGroupItem><Ingredient name={ingredient} /></ListGroupItem>);
   return (
     <Panel collapsible header={title}>
