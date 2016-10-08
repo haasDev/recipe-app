@@ -10,6 +10,8 @@ import ModalBody from 'react-bootstrap/lib/ModalBody';
 import ModalFooter from 'react-bootstrap/lib/ModalFooter';
 import ModalTitle from 'react-bootstrap/lib/ModalTitle';
 
+import styles from '../styles/MainStyles';
+
 export default ({showModal,
                   close,
                   recipeName,
@@ -32,17 +34,20 @@ export default ({showModal,
             value={recipeName}
             type="text"
             placeholder="Name"
-            onChange={recipeNameChange} />
+            onChange={recipeNameChange}
+            style={styles.Modal.field} />
           <FormControl
             value={recipeIngredientList}
             type="text"
             placeholder="Comma separated list of Ingredients"
-            onChange={recipeIngredientListChange} />
+            onChange={recipeIngredientListChange}
+            style={styles.Modal.field} />
           <FormControl
             value={recipeInstructions}
-            type="textarea"
+            componentClass="textarea"
             placeholder="Cooking Instructions"
-            onChange={recipeInstructionsChange} />
+            onChange={recipeInstructionsChange}
+            style={styles.Modal.field} />
         </FormGroup>
       </form>
     </ModalBody>

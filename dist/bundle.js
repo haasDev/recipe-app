@@ -24030,6 +24030,10 @@
 	
 	var _Ingredient2 = _interopRequireDefault(_Ingredient);
 	
+	var _MainStyles = __webpack_require__(330);
+	
+	var _MainStyles2 = _interopRequireDefault(_MainStyles);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function (_ref) {
@@ -24046,24 +24050,28 @@
 	  });
 	  return _react2.default.createElement(
 	    _Panel2.default,
-	    { collapsible: true, header: title },
+	    { collapsible: true, header: title, style: _MainStyles2.default.recipe },
 	    _react2.default.createElement(
 	      _ListGroup2.default,
 	      { fill: true },
-	      ingredientList
-	    ),
-	    _react2.default.createElement(
-	      'div',
-	      null,
+	      ingredientList,
 	      _react2.default.createElement(
-	        'p',
+	        _ListGroupItem2.default,
 	        null,
-	        'Instructions:'
-	      ),
-	      _react2.default.createElement(
-	        'p',
-	        null,
-	        instructions
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'p',
+	            { style: _MainStyles2.default.instructions.p },
+	            'Instructions:'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            instructions
+	          )
+	        )
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -24071,13 +24079,13 @@
 	      { className: 'button-group' },
 	      _react2.default.createElement(
 	        _Button2.default,
-	        { bsStyle: 'danger' },
+	        { bsStyle: 'danger', style: _MainStyles2.default.Button },
 	        _react2.default.createElement(_Glyphicon2.default, { glyph: 'remove' }),
 	        ' Remove'
 	      ),
 	      _react2.default.createElement(
 	        _Button2.default,
-	        { bsStyle: 'warning' },
+	        { bsStyle: 'warning', style: _MainStyles2.default.Button },
 	        _react2.default.createElement(_Glyphicon2.default, { glyph: 'pencil' }),
 	        ' Edit'
 	      )
@@ -25867,6 +25875,10 @@
 	
 	var _ModalTitle2 = _interopRequireDefault(_ModalTitle);
 	
+	var _MainStyles = __webpack_require__(330);
+	
+	var _MainStyles2 = _interopRequireDefault(_MainStyles);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = function (_ref) {
@@ -25906,17 +25918,20 @@
 	            value: recipeName,
 	            type: 'text',
 	            placeholder: 'Name',
-	            onChange: recipeNameChange }),
+	            onChange: recipeNameChange,
+	            style: _MainStyles2.default.Modal.field }),
 	          _react2.default.createElement(_FormControl2.default, {
 	            value: recipeIngredientList,
 	            type: 'text',
 	            placeholder: 'Comma separated list of Ingredients',
-	            onChange: recipeIngredientListChange }),
+	            onChange: recipeIngredientListChange,
+	            style: _MainStyles2.default.Modal.field }),
 	          _react2.default.createElement(_FormControl2.default, {
 	            value: recipeInstructions,
-	            type: 'textarea',
+	            componentClass: 'textarea',
 	            placeholder: 'Cooking Instructions',
-	            onChange: recipeInstructionsChange })
+	            onChange: recipeInstructionsChange,
+	            style: _MainStyles2.default.Modal.field })
 	        )
 	      )
 	    ),
@@ -28771,6 +28786,41 @@
 	  return [parentProps, childProps];
 	}
 	module.exports = exports["default"];
+
+/***/ },
+/* 330 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = {
+	  h1: {
+	    textAlign: 'center'
+	  },
+	  Button: {
+	    float: 'right',
+	    marginRight: '20px'
+	  },
+	  instructions: {
+	    p: {
+	      textDecoration: 'underline'
+	    }
+	  },
+	  recipe: {
+	    maxWidth: '1000px',
+	    marginRight: 'auto',
+	    marginLeft: 'auto',
+	    cursor: 'pointer'
+	  },
+	  Modal: {
+	    field: {
+	      margin: '10px'
+	    }
+	  }
+	};
 
 /***/ }
 /******/ ]);

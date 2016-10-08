@@ -8,20 +8,24 @@ import Panel from 'react-bootstrap/lib/Panel';
 
 import Ingredient from './Ingredient.jsx';
 
+import styles from '../styles/MainStyles';
+
 export default ({title, ingredients, instructions}) => {
   const ingredientList = ingredients.map(ingredient => <ListGroupItem key={ingredient}><Ingredient name={ingredient} /></ListGroupItem>);
   return (
-    <Panel collapsible header={title}>
+    <Panel collapsible header={title} style={styles.recipe}>
       <ListGroup fill>
         {ingredientList}
+        <ListGroupItem>
+          <div>
+            <p style={styles.instructions.p}>Instructions:</p>
+            <p>{instructions}</p>
+          </div>
+        </ListGroupItem>
       </ListGroup>
-      <div>
-        <p>Instructions:</p>
-        <p>{instructions}</p>
-      </div>
       <div className="button-group">
-        <Button bsStyle="danger"><Glyphicon glyph="remove" /> Remove</Button>
-        <Button bsStyle="warning"><Glyphicon glyph="pencil" /> Edit</Button>
+        <Button bsStyle="danger" style={styles.Button}><Glyphicon glyph="remove" /> Remove</Button>
+        <Button bsStyle="warning" style={styles.Button}><Glyphicon glyph="pencil" /> Edit</Button>
       </div>
     </Panel>
   );
