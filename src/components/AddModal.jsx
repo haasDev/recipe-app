@@ -13,14 +13,14 @@ import ModalTitle from 'react-bootstrap/lib/ModalTitle';
 import styles from '../styles/MainStyles';
 
 export default ({showModal,
-                  close,
-                  recipeName,
-                  recipeNameChange,
-                  recipeIngredientList,
-                  recipeIngredientListChange,
-                  recipeInstructions,
-                  recipeInstructionsChange,
-                  addRecipe}) => (
+                close,
+                recipeName,
+                recipeNameChange,
+                recipeIngredientList,
+                recipeIngredientListChange,
+                recipeInstructions,
+                recipeInstructionsChange,
+                addRecipe}) => (
   <Modal show={showModal} onHide={close}>
     <ModalHeader closeButton>
       <ModalTitle>Add Recipe</ModalTitle>
