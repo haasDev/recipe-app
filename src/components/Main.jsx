@@ -28,15 +28,13 @@ class RecipeBox extends React.Component {
 
   // class methods
   addRecipe() {
-    const newRecipe = [
-      {
-        title: this.state.recipeName,
-        ingredients: this.state.recipeIngredientList.split(','),
-        instructions: this.state.recipeInstructions
-      }
-    ];
+    const newRecipe = {
+      title: this.state.recipeName,
+      ingredients: this.state.recipeIngredientList.split(','),
+      instructions: this.state.recipeInstructions
+    };
 
-    const newRecipeList = this.state.recipes.concat(newRecipe);
+    const newRecipeList = [...this.state.recipes, newRecipe];
 
     this.setState({recipes: newRecipeList, recipeName: '', recipeIngredientList: '', recipeInstructions: ''});
 
