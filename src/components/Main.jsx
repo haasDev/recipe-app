@@ -40,8 +40,6 @@ class RecipeBox extends React.Component {
 
     this.setState({recipes: newRecipeList, recipeName: '', recipeIngredientList: '', recipeInstructions: ''});
 
-    console.log({newRecipeList});
-
     this.toggleModal();
   }
 
@@ -62,7 +60,7 @@ class RecipeBox extends React.Component {
   }
 
   render() {
-    const recipes = this.state.recipes.map(recipe => <Recipe {...recipe});
+    const recipes = this.state.recipes.map(recipe => <Recipe key={recipe.title} {...recipe} />);
 
     return (
       <div>

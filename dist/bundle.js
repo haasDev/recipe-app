@@ -46,6 +46,8 @@
 
 	'use strict';
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
@@ -121,8 +123,6 @@
 	
 	      this.setState({ recipes: newRecipeList, recipeName: '', recipeIngredientList: '', recipeInstructions: '' });
 	
-	      console.log({ newRecipeList: newRecipeList });
-	
 	      this.toggleModal();
 	    }
 	  }, {
@@ -149,12 +149,7 @@
 	    key: 'render',
 	    value: function render() {
 	      var recipes = this.state.recipes.map(function (recipe) {
-	        return _react2.default.createElement(_Recipe2.default, {
-	          title: recipe.title,
-	          key: recipe.title,
-	          ingredients: recipe.ingredients,
-	          instructions: recipe.instructions
-	        });
+	        return _react2.default.createElement(_Recipe2.default, _extends({ key: recipe.title }, recipe));
 	      });
 	
 	      return _react2.default.createElement(
