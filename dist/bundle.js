@@ -106,7 +106,6 @@
 	    _this.recipeNameChange = _this.recipeNameChange.bind(_this);
 	    _this.recipeIngredientListChange = _this.recipeIngredientListChange.bind(_this);
 	    _this.recipeInstructionsChange = _this.recipeInstructionsChange.bind(_this);
-	    _this.removeRecipe = _this.removeRecipe.bind(_this);
 	    return _this;
 	  }
 	
@@ -163,7 +162,8 @@
 	
 	      var recipes = this.state.recipes.map(function (recipe) {
 	        return _react2.default.createElement(_Recipe2.default, _extends({
-	          key: recipe.title }, recipe, {
+	          key: recipe.title
+	        }, recipe, {
 	          recipe: recipe,
 	          removeRecipe: _this2.removeRecipe.bind(_this2, recipe) }));
 	      });
@@ -24092,7 +24092,7 @@
 	      { className: 'button-group' },
 	      _react2.default.createElement(
 	        _Button2.default,
-	        { bsStyle: 'danger', style: _MainStyles2.default.Button, onClick: undefined.removeRecipe.bind(undefined, recipe) },
+	        { bsStyle: 'danger', style: _MainStyles2.default.Button, onClick: removeRecipe.bind(null, recipe) },
 	        _react2.default.createElement(_Glyphicon2.default, { glyph: 'remove' }),
 	        ' Remove'
 	      ),

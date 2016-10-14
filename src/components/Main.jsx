@@ -24,7 +24,6 @@ class RecipeBox extends React.Component {
     this.recipeNameChange = this.recipeNameChange.bind(this);
     this.recipeIngredientListChange = this.recipeIngredientListChange.bind(this);
     this.recipeInstructionsChange = this.recipeInstructionsChange.bind(this);
-    this.removeRecipe = this.removeRecipe.bind(this);
   }
 
   // class methods
@@ -66,7 +65,8 @@ class RecipeBox extends React.Component {
   render() {
     const recipes = this.state.recipes.map(recipe =>
       <Recipe
-        key={recipe.title} {...recipe}
+        key={recipe.title}
+        {...recipe}
         recipe={recipe}
         removeRecipe={this.removeRecipe.bind(this, recipe)} />
     );
