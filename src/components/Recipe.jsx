@@ -24,7 +24,7 @@ export default ({title, ingredients, instructions}) => {
         </ListGroupItem>
       </ListGroup>
       <div className="button-group">
-        <Button bsStyle="danger" style={styles.Button}><Glyphicon glyph="remove" /> Remove</Button>
+        <Button bsStyle="danger" style={styles.Button} onClick={this.removeRecipe}><Glyphicon glyph="remove" /> Remove</Button>
         <Button bsStyle="warning" style={styles.Button}><Glyphicon glyph="pencil" /> Edit</Button>
       </div>
     </Panel>
