@@ -58,6 +58,11 @@ class RecipeBox extends React.Component {
     this.setState({recipeInstructions: e.target.value});
   }
 
+  removeRecipe(recipe) {
+    const newRecipeList = this.state.recipes.filter(item => recipe !== item);
+    this.setState({recipes: newRecipeList});
+  }
+
   render() {
     const recipes = this.state.recipes.map(recipe => <Recipe key={recipe.title} {...recipe} />);
 
