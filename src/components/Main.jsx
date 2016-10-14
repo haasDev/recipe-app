@@ -24,6 +24,7 @@ class RecipeBox extends React.Component {
     this.recipeNameChange = this.recipeNameChange.bind(this);
     this.recipeIngredientListChange = this.recipeIngredientListChange.bind(this);
     this.recipeInstructionsChange = this.recipeInstructionsChange.bind(this);
+    this.removeRecipe = this.removeRecipe.bind(this);
   }
 
   // class methods
