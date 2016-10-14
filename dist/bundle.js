@@ -106,6 +106,7 @@
 	    _this.recipeNameChange = _this.recipeNameChange.bind(_this);
 	    _this.recipeIngredientListChange = _this.recipeIngredientListChange.bind(_this);
 	    _this.recipeInstructionsChange = _this.recipeInstructionsChange.bind(_this);
+	    _this.removeRecipe = _this.removeRecipe.bind(_this);
 	    return _this;
 	  }
 	
@@ -148,10 +149,23 @@
 	      this.setState({ recipeInstructions: e.target.value });
 	    }
 	  }, {
+	    key: 'removeRecipe',
+	    value: function removeRecipe(recipe) {
+	      var newRecipeList = this.state.recipes.filter(function (item) {
+	        return recipe !== item;
+	      });
+	      this.setState({ recipes: newRecipeList });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      var recipes = this.state.recipes.map(function (recipe) {
-	        return _react2.default.createElement(_Recipe2.default, _extends({ key: recipe.title }, recipe));
+	        return _react2.default.createElement(_Recipe2.default, _extends({
+	          key: recipe.title }, recipe, {
+	          recipe: recipe,
+	          removeRecipe: _this2.removeRecipe.bind(_this2, recipe) }));
 	      });
 	
 	      return _react2.default.createElement(
@@ -24037,6 +24051,8 @@
 	  var title = _ref.title;
 	  var ingredients = _ref.ingredients;
 	  var instructions = _ref.instructions;
+	  var removeRecipe = _ref.removeRecipe;
+	  var recipe = _ref.recipe;
 	
 	  var ingredientList = ingredients.map(function (ingredient) {
 	    return _react2.default.createElement(
@@ -24076,7 +24092,7 @@
 	      { className: 'button-group' },
 	      _react2.default.createElement(
 	        _Button2.default,
-	        { bsStyle: 'danger', style: _MainStyles2.default.Button },
+	        { bsStyle: 'danger', style: _MainStyles2.default.Button, onClick: undefined.removeRecipe.bind(undefined, recipe) },
 	        _react2.default.createElement(_Glyphicon2.default, { glyph: 'remove' }),
 	        ' Remove'
 	      ),

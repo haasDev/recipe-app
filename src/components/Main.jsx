@@ -64,7 +64,12 @@ class RecipeBox extends React.Component {
   }
 
   render() {
-    const recipes = this.state.recipes.map(recipe => <Recipe key={recipe.title} {...recipe} />);
+    const recipes = this.state.recipes.map(recipe =>
+      <Recipe
+        key={recipe.title} {...recipe}
+        recipe={recipe}
+        removeRecipe={this.removeRecipe.bind(this, recipe)} />
+    );
 
     return (
       <div>
