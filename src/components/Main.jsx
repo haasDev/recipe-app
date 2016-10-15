@@ -42,11 +42,14 @@ class RecipeBox extends React.Component {
   }
 
   editRecipe(recipe) {
+    this.removeRecipe(recipe);
+    const ingredients = (recipe.ingredients.length > 1) ? recipe.ingredients.join(',') : recipe.ingredients[0];
     this.setState({
       recipeName: recipe.title,
-      recipeIngredientList: recipe.ingredients.join(','),
+      recipeIngredientList: ingredients,
       recipeInstructions: recipe.instructions
     });
+    console.log(this.state.recipeIngredientList);
     this.toggleModal();
   }
 
@@ -95,7 +98,7 @@ class RecipeBox extends React.Component {
         <AddModal
           recipeName={this.state.recipeName}
           recipeNameChange={this.recipeNameChange}
-          recipeIngredientList={this.state.ingredientList}
+          recipeIngredientList={this.state.recipeIngredientList}
           recipeIngredientListChange={this.recipeIngredientListChange}
           recipeInstructions={this.state.recipeInstructions}
           recipeInstructionsChange={this.recipeInstructionsChange}
