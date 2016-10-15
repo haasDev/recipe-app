@@ -41,6 +41,15 @@ class RecipeBox extends React.Component {
     this.toggleModal();
   }
 
+  editRecipe(recipe) {
+    this.setState({
+      recipeName: recipe.title,
+      recipeIngredientList: recipe.ingredients.join(','),
+      recipeInstructions: recipe.instructions
+    });
+    this.toggleModal();
+  }
+
   toggleModal() {
     this.setState({showModal: !this.state.showModal});
   }
