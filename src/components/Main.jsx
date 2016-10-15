@@ -43,10 +43,9 @@ class RecipeBox extends React.Component {
 
   editRecipe(recipe) {
     this.removeRecipe(recipe);
-    const ingredients = (recipe.ingredients.length > 1) ? recipe.ingredients.join(',') : recipe.ingredients[0];
     this.setState({
       recipeName: recipe.title,
-      recipeIngredientList: ingredients,
+      recipeIngredientList: recipe.ingredients.join(','),
       recipeInstructions: recipe.instructions
     });
     console.log(this.state.recipeIngredientList);
