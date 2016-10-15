@@ -10,7 +10,7 @@ import Ingredient from './Ingredient.jsx';
 
 import styles from '../styles/MainStyles';
 
-export default ({title, ingredients, instructions, removeRecipe, recipe}) => {
+export default ({title, ingredients, instructions, removeRecipe, editRecipe, recipe}) => {
   const ingredientList = ingredients.map(ingredient => <ListGroupItem key={ingredient}><Ingredient name={ingredient} /></ListGroupItem>);
   return (
     <Panel collapsible header={title} style={styles.recipe}>
@@ -27,7 +27,7 @@ export default ({title, ingredients, instructions, removeRecipe, recipe}) => {
         <Button bsStyle="danger" style={styles.Button} onClick={removeRecipe}>
           <Glyphicon glyph="remove" /> Remove
         </Button>
-        <Button bsStyle="warning" style={styles.Button}><Glyphicon glyph="pencil" /> Edit</Button>
+        <Button bsStyle="warning" style={styles.Button} onClick={editRecipe}><Glyphicon glyph="pencil" /> Edit</Button>
       </div>
     </Panel>
   );
