@@ -77,6 +77,7 @@ class RecipeBox extends React.Component {
         key={recipe.title}
         {...recipe}
         recipe={recipe}
+        editRecipe={this.editRecipe.bind(this, recipe)}
         removeRecipe={this.removeRecipe.bind(this, recipe)} />
     );
 
